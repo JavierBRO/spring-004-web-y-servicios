@@ -6,13 +6,21 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// @AllArgsConstructor  NO Usar lombok porque ya creamos.
+// un constructor con datos demo. EVITAR REFERENCIAS CIRCULARES entre servicios
 @Service
 public class ProductService {
 
     private List<Product> products;
+    private UserService userService;
 
-    public ProductService () {  //3 formas distintas de crear objetos 1:
+
+    public ProductService (UserService userService) {  //3 formas distintas de crear objetos 1:
+        this.userService = userService;
+        // comprobar que userService esta correctamente inyectado en productService
+        this.userService.findById(1L);
+        System.out.println("UserService inyectado perfectamente en ProcuctService");
+
         products = new ArrayList<>();
 
         products.add(Product.builder()
