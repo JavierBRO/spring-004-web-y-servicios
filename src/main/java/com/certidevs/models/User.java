@@ -4,14 +4,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * Clase user con anotaciones Lombok que autogeneran los métodos constructores
- * getter, setter,....PTE COMENTARIOS DE ALAN en VSCode
+ * Clase User con anotaciones Lombok que autogeneran
+ * los métodos constructores, getter, setter, toString, etc
+ *
+ * Además, tiene método builder para construir los objetos
+ * de forma más dinámica utilizando encadenamiento de métodos
+ * y un método .build()
  */
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class User {
 
@@ -19,8 +25,9 @@ public class User {
     private String name;
     private String email;
     // Dato sensible...como ignorarlo en respuestas json. Para no enviarlo en petición
-    @JsonIgnore  //  para ocultar datos sensibles atributo password lo ignora p.ej.
-    // @JsonIgnoreProperties es vital para ignorar atributos en asociaciones .
+    //  para ocultar datos sensibles atributo password lo ignora p. ej.
+    // @JsonIgnoreProperties es vital para ignorar atributos en asociaciones.
+    @JsonIgnore
     private String password;
 
 

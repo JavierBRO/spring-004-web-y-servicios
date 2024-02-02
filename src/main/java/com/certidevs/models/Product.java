@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor // constructor todos parámetros
 @NoArgsConstructor // constructor vacío
-@Builder
+@Builder  // construir objetos de forma dinámica usando métodos encadenados más método .build()
 public class Product {
 
     // atributos

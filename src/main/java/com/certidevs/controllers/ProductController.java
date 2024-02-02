@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-// se hace la inyeccion de dependencia así@AllArgsConstructor
+// se hace la inyeccion de dependencia así @AllArgsConstructor
 // crea la inyeccion de objetos el propio Spring Boot
 @AllArgsConstructor
 @RestController

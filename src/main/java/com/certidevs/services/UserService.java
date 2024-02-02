@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     // TODO: Inyectar el productService
 //  COMENTADO PARA EVITAR LA REFERENCIA CIRCULAR
-// Ya se inyecta userService en ProductService
+// Ya se inyecta UserService en ProductService
 //    private ProductService productService;
 
 
@@ -30,8 +30,9 @@ public class UserService {
 ////        System.out.println(productService.checkShopCartHasProduct()); // devuelve un booleano true en consola.
 ////         ..funciona con el postman al repetir el get de antes. Pero con el método del servicio productService
 ////         OBJETIVO : Comprobar que productService no sea nulo, porque se ha inyectado bien.
+
 //        if (productService == null)
-////            System.out.println("HAY un ERROR");
+////            System.out.println("HAY un ERROR: productService es null!!");
 ////        else System.out.println("ok");
     return new User(id, "usuario1", "U1@gmail.com", "admin");
     }
